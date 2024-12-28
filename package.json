@@ -16,7 +16,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/misskey-dev/misskey.js.git"
+		"url": "git+https://github.com/hos1miya/misskey-js.git"
 	},
 	"devDependencies": {
 		"@microsoft/api-extractor": "^7.19.3",
