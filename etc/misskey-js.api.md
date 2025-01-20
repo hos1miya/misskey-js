@@ -2812,6 +2812,8 @@ type UserLite = {
     avatarDecorations: {
         id: ID;
         url: string;
+        angle?: number;
+        flipH?: boolean;
     }[];
     emojis: {
         name: string;
