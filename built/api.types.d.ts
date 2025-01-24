@@ -1449,6 +1449,18 @@ export declare type Endpoints = {
         };
         res: Note[];
     };
+    'notes/mutes/create': {
+        req: {
+            noteId: Note['id'];
+        };
+        res: null;
+    };
+    'notes/mutes/delete': {
+        req: {
+            noteId: Note['id'];
+        };
+        res: null;
+    };
     'notes/polls/recommendation': {
         req: TODO;
         res: TODO;

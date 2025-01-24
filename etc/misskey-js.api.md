@@ -1740,6 +1740,18 @@ export type Endpoints = {
         };
         res: Note[];
     };
+    'notes/mutes/create': {
+        req: {
+            noteId: Note['id'];
+        };
+        res: null;
+    }
+    'notes/mutes/delete': {
+        req: {
+            noteId: Note['id'];
+        };
+        res: null;
+    }
     'notes/polls/recommendation': {
         req: TODO;
         res: TODO;
@@ -2247,17 +2259,17 @@ type FollowRequest = {
 // @public (undocumented)
 type GalleryPost = {
     id: ID;
-	createdAt: DateString;
-	updatedAt: DateString;
-	userId: User['id'];
-	user: User;
-	title: string;
-	description: string | null;
-	fileIds: DriveFile['id'][];
-	files: DriveFile[];
-	isSensitive: boolean;
-	likedCount: number;
-	isLiked?: boolean;
+ createdAt: DateString;
+ updatedAt: DateString;
+ userId: User['id'];
+ user: User;
+ title: string;
+ description: string | null;
+ fileIds: DriveFile['id'][];
+ files: DriveFile[];
+ isSensitive: boolean;
+ likedCount: number;
+ isLiked?: boolean;
 };
 
 // @public (undocumented)
