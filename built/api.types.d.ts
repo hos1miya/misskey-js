@@ -1056,6 +1056,14 @@ export declare type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'i/get-word-muted-notes': {
+        req: {
+            limit?: number;
+            sinceId?: NoteFavorite['id'];
+            untilId?: NoteFavorite['id'];
+        };
+        res: Note[];
+    };
     'i/import-following': {
         req: TODO;
         res: TODO;
