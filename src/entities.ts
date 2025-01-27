@@ -21,6 +21,8 @@ export type UserLite = {
 		url: string;
 		angle?: number;
 		flipH?: boolean;
+		offsetX?: number;
+		offsetY?: number;
 	}[];
 	emojis: {
 		name: string;
