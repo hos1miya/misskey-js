@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.moderationLogTypes = exports.permissions = exports.ffVisibility = exports.mutedNoteReasons = exports.noteVisibilities = exports.notificationTypes = void 0;
-exports.notificationTypes = ['follow', 'mention', 'reply', 'renote', 'quote', 'reaction', 'pollVote', 'pollEnded', 'receiveFollowRequest', 'followRequestAccepted', 'groupInvited', 'app'];
+exports.notificationTypes = ['follow', 'mention', 'reply', 'renote', 'quote', 'reaction', 'pollVote', 'pollEnded', 'receiveFollowRequest', 'followRequestAccepted', 'groupInvited', 'app', 'chatMessageReceived'];
 exports.noteVisibilities = ['public', 'home', 'followers', 'specified'];
 exports.mutedNoteReasons = ['word', 'manual', 'spam', 'other'];
 exports.ffVisibility = ['public', 'followers', 'private'];

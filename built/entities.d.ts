@@ -238,6 +238,11 @@ export declare type Notification = {
     header?: string | null;
     body: string;
     icon?: string | null;
+} | {
+    type: 'chatMessageReceived';
+    message: MessagingMessage;
+    user: User;
+    userId: User['id'];
 });
 export declare type MessagingMessage = {
     id: ID;
