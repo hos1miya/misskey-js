@@ -79,7 +79,13 @@ export type UserDetailed = UserLite & {
 	url: string | null;
 };
 
-export type UserGroup = TODO;
+export type UserGroup = {
+	id: ID,
+	createdAt: DateString,
+	name: string,
+	ownerId: User['id'],
+	userIds: User['id'][],
+}
 
 export type UserList = {
 	id: ID;
