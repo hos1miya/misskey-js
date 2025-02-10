@@ -1686,6 +1686,16 @@ export declare type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'train-information': {
+        req: {
+            area: number;
+        };
+        res: {
+            line: string;
+            status: string;
+            detail: string;
+        }[];
+    };
     'username/available': {
         req: {
             username: string;

@@ -560,6 +560,9 @@ export type Endpoints = {
 	// sw
 	'sw/register': { req: TODO; res: TODO; };
 
+	// train-information
+	'train-information': { req: { area: number; }; res: { line: string; status: string; detail: string; }[]; };
+
 	// username
 	'username/available': { req: { username: string; }; res: { available: boolean; }; };
 
