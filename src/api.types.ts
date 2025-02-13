@@ -249,7 +249,8 @@ export type Endpoints = {
 	}; };
 
 	// clips
-	'clips/add-note': { req: TODO; res: TODO; };
+	'clips/add-note': { req: { clipId: Clip['id']; noteId: Note['id']; }; res: null; };
+	'clips/remove-note': { req: { clipId: Clip['id']; noteId: Note['id']; }; res: null; };
 	'clips/create': { req: TODO; res: TODO; };
 	'clips/delete': { req: { clipId: Clip['id']; }; res: null; };
 	'clips/list': { req: TODO; res: TODO; };
@@ -509,7 +510,10 @@ export type Endpoints = {
 	'notes/search': { req: TODO; res: TODO; };
 	'notes/show': { req: { noteId: Note['id']; }; res: Note; };
 	'notes/state': { req: TODO; res: TODO; };
+	'notes/thread-muting/create': { req: { noteId: Note['id']; }; res: null; };
+	'notes/thread-muting/delete': { req: { noteId: Note['id']; }; res: null; };
 	'notes/timeline': { req: { limit?: number; sinceId?: Note['id']; untilId?: Note['id']; sinceDate?: number; untilDate?: number; }; res: Note[]; };
+	'notes/translate': { req: { noteId: Note['id']; targetLang: string; }; res: { sourceLang: string; text: string; }; };
 	'notes/unrenote': { req: { noteId: Note['id']; }; res: null; };
 	'notes/user-list-timeline': { req: { listId: UserList['id']; limit?: number; sinceId?: Note['id']; untilId?: Note['id']; sinceDate?: number; untilDate?: number; }; res: Note[]; };
 	'notes/watching/create': { req: TODO; res: TODO; };

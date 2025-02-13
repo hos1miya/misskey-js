@@ -616,8 +616,18 @@ export declare type Endpoints = {
         };
     };
     'clips/add-note': {
-        req: TODO;
-        res: TODO;
+        req: {
+            clipId: Clip['id'];
+            noteId: Note['id'];
+        };
+        res: null;
+    };
+    'clips/remove-note': {
+        req: {
+            clipId: Clip['id'];
+            noteId: Note['id'];
+        };
+        res: null;
     };
     'clips/create': {
         req: TODO;
@@ -1537,6 +1547,18 @@ export declare type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'notes/thread-muting/create': {
+        req: {
+            noteId: Note['id'];
+        };
+        res: null;
+    };
+    'notes/thread-muting/delete': {
+        req: {
+            noteId: Note['id'];
+        };
+        res: null;
+    };
     'notes/timeline': {
         req: {
             limit?: number;
@@ -1546,6 +1568,16 @@ export declare type Endpoints = {
             untilDate?: number;
         };
         res: Note[];
+    };
+    'notes/translate': {
+        req: {
+            noteId: Note['id'];
+            targetLang: string;
+        };
+        res: {
+            sourceLang: string;
+            text: string;
+        };
     };
     'notes/unrenote': {
         req: {

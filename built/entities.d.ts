@@ -180,6 +180,8 @@ export declare type Note = {
     uri?: string;
     url?: string;
     isHidden?: boolean;
+    channel?: Channel | null;
+    channelId?: Channel['id'] | null;
 };
 export declare type NoteReaction = {
     id: ID;

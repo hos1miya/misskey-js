@@ -190,6 +190,8 @@ export type Note = {
 	uri?: string;
 	url?: string;
 	isHidden?: boolean;
+	channel?: Channel | null;
+	channelId?: Channel['id'] | null;
 };
 
 export type NoteReaction = {
