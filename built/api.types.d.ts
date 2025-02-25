@@ -224,6 +224,12 @@ export declare type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'admin/reboot-server': {
+        req: {
+            confirm: string;
+        };
+        res: null;
+    };
     'admin/relays/add': {
         req: TODO;
         res: TODO;
@@ -1395,6 +1401,7 @@ export declare type Endpoints = {
             replyId?: null | Note['id'];
             renoteId?: null | Note['id'];
             channelId?: null | Channel['id'];
+            via?: null | string;
             poll?: null | {
                 choices: string[];
                 multiple?: boolean;

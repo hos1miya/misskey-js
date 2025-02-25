@@ -182,6 +182,7 @@ export declare type Note = {
     isHidden?: boolean;
     channel?: Channel | null;
     channelId?: Channel['id'] | null;
+    via?: string | null;
 };
 export declare type NoteReaction = {
     id: ID;

@@ -192,6 +192,7 @@ export type Note = {
 	isHidden?: boolean;
 	channel?: Channel | null;
 	channelId?: Channel['id'] | null;
+	via?: string | null;
 };
 
 export type NoteReaction = {

@@ -65,6 +65,7 @@ export type Endpoints = {
 	'admin/queue/inbox-delayed': { req: TODO; res: TODO; };
 	'admin/queue/jobs': { req: TODO; res: TODO; };
 	'admin/queue/stats': { req: TODO; res: TODO; };
+	'admin/reboot-server': { req: { confirm: string; }; res: null; }
 	'admin/relays/add': { req: TODO; res: TODO; };
 	'admin/relays/list': { req: TODO; res: TODO; };
 	'admin/relays/remove': { req: TODO; res: TODO; };
@@ -482,6 +483,7 @@ export type Endpoints = {
 		replyId?: null | Note['id'];
 		renoteId?: null | Note['id'];
 		channelId?: null | Channel['id'];
+		via?: null | string;
 		poll?: null | {
 			choices: string[];
 			multiple?: boolean;
