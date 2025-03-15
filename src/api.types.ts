@@ -3,6 +3,7 @@ import {
 	LiteInstanceMetadata,
 	MeDetailed,
 	Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage,
+	AvatarDecoration,
 } from './entities';
 
 type TODO = Record<string, any> | null;
@@ -40,9 +41,14 @@ export type Endpoints = {
 	'admin/ad/list': { req: TODO; res: TODO; };
 	'admin/ad/update': { req: TODO; res: TODO; };
 	'admin/announcements/create': { req: TODO; res: TODO; };
-	'admin/announcements/delete': { req: { id: Announcement['id'] }; res: null; };
+	'admin/announcements/delete': { req: { id: Announcement['id']; }; res: null; };
 	'admin/announcements/list': { req: TODO; res: TODO; };
 	'admin/announcements/update': { req: TODO; res: TODO; };
+	'admin/avatar-decorations/create': { req: { name: AvatarDecoration['name']; description: AvatarDecoration['description']; url: AvatarDecoration['url']; roleIdsThatCanBeUsedThisDecoration?: AvatarDecoration['roleIdsThatCanBeUsedThisDecoration']; }; res: TODO; };
+	'admin/avatar-decorations/delete': { req: { id: AvatarDecoration['id']; }; res: TODO; };
+	'admin/avatar-decorations/list': { req: TODO; res: TODO; };
+	'admin/avatar-decorations/update': { req: { id: AvatarDecoration['id']; name?: AvatarDecoration['name']; description?: AvatarDecoration['description']; url?: AvatarDecoration['url']; roleIdsThatCanBeUsedThisDecoration?: AvatarDecoration['roleIdsThatCanBeUsedThisDecoration']; }; res: TODO; };
+	'admin/delete-account': { req: TODO; res: TODO; };
 	'admin/drive/clean-remote-files': { req: TODO; res: TODO; };
 	'admin/drive/cleanup': { req: TODO; res: TODO; };
 	'admin/drive/files': { req: TODO; res: TODO; };
@@ -57,6 +63,7 @@ export type Endpoints = {
 	'admin/federation/refresh-remote-instance-metadata': { req: TODO; res: TODO; };
 	'admin/federation/remove-all-following': { req: TODO; res: TODO; };
 	'admin/federation/update-instance': { req: TODO; res: TODO; };
+	'admin/meta': { req: TODO; res: TODO; };
 	'admin/moderators/add': { req: TODO; res: TODO; };
 	'admin/moderators/remove': { req: TODO; res: TODO; };
 	'admin/promo/create': { req: TODO; res: TODO; };
@@ -69,6 +76,9 @@ export type Endpoints = {
 	'admin/relays/add': { req: TODO; res: TODO; };
 	'admin/relays/list': { req: TODO; res: TODO; };
 	'admin/relays/remove': { req: TODO; res: TODO; };
+	'admin/roles/list': { req: TODO; res: TODO; };
+	'admin/roles/assign': { req: TODO; res: TODO; };
+	'admin/roles/unassign': { req: TODO; res: TODO; };
 
 	// announcements
 	'announcements': { req: { limit?: number; withUnreads?: boolean; sinceId?: Announcement['id']; untilId?: Announcement['id']; }; res: Announcement[]; };
@@ -126,6 +136,11 @@ export type Endpoints = {
 		remote: {
 			users: number[];
 		};
+	}; };
+	'charts/ap-request': { req: { span: 'day' | 'hour'; limit?: number; offset?: number | null; }; res: {
+		deliverFailed: number[];
+		deliverSucceeded: number[];
+		inboxReceived: number[];
 	}; };
 	'charts/drive': { req: { span: 'day' | 'hour'; limit?: number; offset?: number | null; }; res: {
 		local: {
@@ -354,6 +369,7 @@ export type Endpoints = {
 	'i/change-password': { req: TODO; res: TODO; };
 	'i/delete-account': { req: { password: string; }; res: null; };
 	'i/export-blocking': { req: TODO; res: TODO; };
+	'i/export-favorites': { req: TODO; res: TODO; };
 	'i/export-following': { req: TODO; res: TODO; };
 	'i/export-mute': { req: TODO; res: TODO; };
 	'i/export-notes': { req: TODO; res: TODO; };
@@ -363,7 +379,9 @@ export type Endpoints = {
 	'i/gallery/posts': { req: TODO; res: TODO; };
 	'i/get-word-muted-notes-count': { req: TODO; res: TODO; };
 	'i/get-word-muted-notes': { req: { limit?: number; sinceId?: NoteFavorite['id']; untilId?: NoteFavorite['id']; }; res: Note[]; };
+	'i/import-blocking': { req: TODO; res: TODO; };
 	'i/import-following': { req: TODO; res: TODO; };
+	'i/import-muting': { req: TODO; res: TODO; };
 	'i/import-user-lists': { req: TODO; res: TODO; };
 	'i/notifications': { req: {
 		limit?: number;
@@ -566,6 +584,9 @@ export type Endpoints = {
 	// sw
 	'sw/register': { req: TODO; res: TODO; };
 
+	// signin
+	'signin': { req: TODO; res: TODO; };
+
 	// train-information
 	'train-information': { req: { area: number; }; res: { line: string; status: string; detail: string; }[]; };
 
@@ -585,6 +606,7 @@ export type Endpoints = {
 	'users/groups/invitations/reject': { req: TODO; res: TODO; };
 	'users/groups/invite': { req: TODO; res: TODO; };
 	'users/groups/joined': { req: TODO; res: TODO; };
+	'users/groups/leave': { req: TODO; res: TODO; };
 	'users/groups/owned': { req: TODO; res: TODO; };
 	'users/groups/pull': { req: TODO; res: TODO; };
 	'users/groups/show': { req: TODO; res: TODO; };

@@ -522,6 +522,17 @@ export type Signin = {
 	success: boolean;
 };
 
+export type AvatarDecoration = {
+	id: ID;
+	updatedAt: Date | null;
+	url: string;
+	name: string;
+	description: string;
+	roleIdsThatCanBeUsedThisDecoration: string[];
+	remoteId: string;
+	host: string | null;
+};
+
 export type UserSorting =
 	| '+follower'
 	| '-follower'

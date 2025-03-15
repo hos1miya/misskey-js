@@ -484,6 +484,16 @@ export declare type Signin = {
     headers: Record<string, any>;
     success: boolean;
 };
+export declare type AvatarDecoration = {
+    id: ID;
+    updatedAt: Date | null;
+    url: string;
+    name: string;
+    description: string;
+    roleIdsThatCanBeUsedThisDecoration: string[];
+    remoteId: string;
+    host: string | null;
+};
 export declare type UserSorting = '+follower' | '-follower' | '+createdAt' | '-createdAt' | '+updatedAt' | '-updatedAt';
 export declare type OriginType = 'combined' | 'local' | 'remote';
 export declare type ModerationLog = {

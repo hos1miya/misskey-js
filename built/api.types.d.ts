@@ -1,4 +1,4 @@
-import { Ad, Announcement, Antenna, App, AuthSession, Blocking, Channel, Clip, DateString, DetailedInstanceMetadata, DriveFile, DriveFolder, Following, FollowingFolloweePopulated, FollowingFollowerPopulated, FollowRequest, GalleryPost, Instance, LiteInstanceMetadata, MeDetailed, Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage } from './entities';
+import { Ad, Announcement, Antenna, App, AuthSession, Blocking, Channel, Clip, DateString, DetailedInstanceMetadata, DriveFile, DriveFolder, Following, FollowingFolloweePopulated, FollowingFollowerPopulated, FollowRequest, GalleryPost, Instance, LiteInstanceMetadata, MeDetailed, Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage, AvatarDecoration } from './entities';
 declare type TODO = Record<string, any> | null;
 declare type NoParams = Record<string, never>;
 declare type ShowUserReq = {
@@ -134,6 +134,39 @@ export declare type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'admin/avatar-decorations/create': {
+        req: {
+            name: AvatarDecoration['name'];
+            description: AvatarDecoration['description'];
+            url: AvatarDecoration['url'];
+            roleIdsThatCanBeUsedThisDecoration?: AvatarDecoration['roleIdsThatCanBeUsedThisDecoration'];
+        };
+        res: TODO;
+    };
+    'admin/avatar-decorations/delete': {
+        req: {
+            id: AvatarDecoration['id'];
+        };
+        res: TODO;
+    };
+    'admin/avatar-decorations/list': {
+        req: TODO;
+        res: TODO;
+    };
+    'admin/avatar-decorations/update': {
+        req: {
+            id: AvatarDecoration['id'];
+            name?: AvatarDecoration['name'];
+            description?: AvatarDecoration['description'];
+            url?: AvatarDecoration['url'];
+            roleIdsThatCanBeUsedThisDecoration?: AvatarDecoration['roleIdsThatCanBeUsedThisDecoration'];
+        };
+        res: TODO;
+    };
+    'admin/delete-account': {
+        req: TODO;
+        res: TODO;
+    };
     'admin/drive/clean-remote-files': {
         req: TODO;
         res: TODO;
@@ -192,6 +225,10 @@ export declare type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'admin/meta': {
+        req: TODO;
+        res: TODO;
+    };
     'admin/moderators/add': {
         req: TODO;
         res: TODO;
@@ -239,6 +276,18 @@ export declare type Endpoints = {
         res: TODO;
     };
     'admin/relays/remove': {
+        req: TODO;
+        res: TODO;
+    };
+    'admin/roles/list': {
+        req: TODO;
+        res: TODO;
+    };
+    'admin/roles/assign': {
+        req: TODO;
+        res: TODO;
+    };
+    'admin/roles/unassign': {
         req: TODO;
         res: TODO;
     };
@@ -416,6 +465,18 @@ export declare type Endpoints = {
             remote: {
                 users: number[];
             };
+        };
+    };
+    'charts/ap-request': {
+        req: {
+            span: 'day' | 'hour';
+            limit?: number;
+            offset?: number | null;
+        };
+        res: {
+            deliverFailed: number[];
+            deliverSucceeded: number[];
+            inboxReceived: number[];
         };
     };
     'charts/drive': {
@@ -1036,6 +1097,10 @@ export declare type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'i/export-favorites': {
+        req: TODO;
+        res: TODO;
+    };
     'i/export-following': {
         req: TODO;
         res: TODO;
@@ -1080,7 +1145,15 @@ export declare type Endpoints = {
         };
         res: Note[];
     };
+    'i/import-blocking': {
+        req: TODO;
+        res: TODO;
+    };
     'i/import-following': {
+        req: TODO;
+        res: TODO;
+    };
+    'i/import-muting': {
         req: TODO;
         res: TODO;
     };
@@ -1725,6 +1798,10 @@ export declare type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'signin': {
+        req: TODO;
+        res: TODO;
+    };
     'train-information': {
         req: {
             area: number;
@@ -1809,6 +1886,10 @@ export declare type Endpoints = {
         res: TODO;
     };
     'users/groups/joined': {
+        req: TODO;
+        res: TODO;
+    };
+    'users/groups/leave': {
         req: TODO;
         res: TODO;
     };
