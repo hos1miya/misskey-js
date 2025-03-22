@@ -1,5 +1,5 @@
 import { EventEmitter } from 'eventemitter3';
-import { BroadcastEvents, Channels } from './streaming.types';
+import type { BroadcastEvents, Channels } from './streaming.types';
 export declare function urlQuery(obj: Record<string, string | number | boolean | undefined>): string;
 declare type AnyOf<T extends Record<any, any>> = T[keyof T];
 declare type StreamEvents = {

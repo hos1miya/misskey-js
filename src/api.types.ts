@@ -1,5 +1,5 @@
-import {
-	Ad, Announcement, Antenna, App, AuthSession, Blocking, Channel, Clip, DateString, DetailedInstanceMetadata, DriveFile, DriveFolder, Following, FollowingFolloweePopulated, FollowingFollowerPopulated, FollowRequest, GalleryPost, Instance, InstanceMetadata,
+import type {
+	Ad, Announcement, Antenna, App, AuthSession, Blocking, Clip, DateString, DetailedInstanceMetadata, DriveFile, DriveFolder, Following, FollowingFolloweePopulated, FollowingFollowerPopulated, FollowRequest, GalleryPost, Instance,
 	LiteInstanceMetadata,
 	MeDetailed,
 	Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage,
@@ -115,18 +115,6 @@ export type Endpoints = {
 	'blocking/create': { req: { userId: User['id'] }; res: UserDetailed; };
 	'blocking/delete': { req: { userId: User['id'] }; res: UserDetailed; };
 	'blocking/list': { req: { limit?: number; sinceId?: Blocking['id']; untilId?: Blocking['id']; }; res: Blocking[]; };
-
-	// channels
-	'channels/create': { req: TODO; res: TODO; };
-	'channels/featured': { req: TODO; res: TODO; };
-	'channels/follow': { req: TODO; res: TODO; };
-	'channels/followed': { req: TODO; res: TODO; };
-	'channels/owned': { req: TODO; res: TODO; };
-	'channels/pin-note': { req: TODO; res: TODO; };
-	'channels/show': { req: TODO; res: TODO; };
-	'channels/timeline': { req: TODO; res: TODO; };
-	'channels/unfollow': { req: TODO; res: TODO; };
-	'channels/update': { req: TODO; res: TODO; };
 
 	// charts
 	'charts/active-users': { req: { span: 'day' | 'hour'; limit?: number; offset?: number | null; }; res: {
@@ -500,7 +488,6 @@ export type Endpoints = {
 		fileIds?: DriveFile['id'][];
 		replyId?: null | Note['id'];
 		renoteId?: null | Note['id'];
-		channelId?: null | Channel['id'];
 		via?: null | string;
 		poll?: null | {
 			choices: string[];

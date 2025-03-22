@@ -1,4 +1,4 @@
-import { Ad, Announcement, Antenna, App, AuthSession, Blocking, Channel, Clip, DateString, DetailedInstanceMetadata, DriveFile, DriveFolder, Following, FollowingFolloweePopulated, FollowingFollowerPopulated, FollowRequest, GalleryPost, Instance, LiteInstanceMetadata, MeDetailed, Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage, AvatarDecoration } from './entities';
+import type { Ad, Announcement, Antenna, App, AuthSession, Blocking, Clip, DateString, DetailedInstanceMetadata, DriveFile, DriveFolder, Following, FollowingFolloweePopulated, FollowingFollowerPopulated, FollowRequest, GalleryPost, Instance, LiteInstanceMetadata, MeDetailed, Note, NoteFavorite, OriginType, Page, ServerInfo, Stats, User, UserDetailed, UserGroup, UserList, UserSorting, Notification, NoteReaction, Signin, MessagingMessage, AvatarDecoration } from './entities';
 declare type TODO = Record<string, any> | null;
 declare type NoParams = Record<string, never>;
 declare type ShowUserReq = {
@@ -411,46 +411,6 @@ export declare type Endpoints = {
             untilId?: Blocking['id'];
         };
         res: Blocking[];
-    };
-    'channels/create': {
-        req: TODO;
-        res: TODO;
-    };
-    'channels/featured': {
-        req: TODO;
-        res: TODO;
-    };
-    'channels/follow': {
-        req: TODO;
-        res: TODO;
-    };
-    'channels/followed': {
-        req: TODO;
-        res: TODO;
-    };
-    'channels/owned': {
-        req: TODO;
-        res: TODO;
-    };
-    'channels/pin-note': {
-        req: TODO;
-        res: TODO;
-    };
-    'channels/show': {
-        req: TODO;
-        res: TODO;
-    };
-    'channels/timeline': {
-        req: TODO;
-        res: TODO;
-    };
-    'channels/unfollow': {
-        req: TODO;
-        res: TODO;
-    };
-    'channels/update': {
-        req: TODO;
-        res: TODO;
     };
     'charts/active-users': {
         req: {
@@ -1473,7 +1433,6 @@ export declare type Endpoints = {
             fileIds?: DriveFile['id'][];
             replyId?: null | Note['id'];
             renoteId?: null | Note['id'];
-            channelId?: null | Channel['id'];
             via?: null | string;
             poll?: null | {
                 choices: string[];

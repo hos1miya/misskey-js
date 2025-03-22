@@ -1,4 +1,4 @@
-import { Endpoints } from './api.types';
+import type { Endpoints } from './api.types';
 export declare type APIError = {
     id: string;
     code: string;

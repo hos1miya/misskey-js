@@ -1,4 +1,4 @@
-import { ModerationLogPayloads } from './consts.js';
+import type { ModerationLogPayloads } from './consts.js';
 export declare type ID = string;
 export declare type DateString = string;
 declare type TODO = Record<string, any>;
@@ -98,7 +98,6 @@ export declare type MeDetailed = UserDetailed & {
     hasPendingReceivedFollowRequest: boolean;
     hasUnreadAnnouncement: boolean;
     hasUnreadAntenna: boolean;
-    hasUnreadChannel: boolean;
     hasUnreadMentions: boolean;
     hasUnreadMessagingMessage: boolean;
     hasUnreadNotification: boolean;
@@ -180,8 +179,6 @@ export declare type Note = {
     uri?: string;
     url?: string;
     isHidden?: boolean;
-    channel?: Channel | null;
-    channelId?: Channel['id'] | null;
     via?: string | null;
 };
 export declare type NoteReaction = {
@@ -427,9 +424,6 @@ export declare type FollowRequest = {
     id: ID;
     follower: User;
     followee: User;
-};
-export declare type Channel = {
-    id: ID;
 };
 export declare type Following = {
     id: ID;

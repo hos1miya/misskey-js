@@ -1,4 +1,4 @@
-import { Antenna, CustomEmoji, DriveFile, MeDetailed, MessagingMessage, Note, Notification, PageEvent, User, UserGroup } from './entities';
+import type { Antenna, CustomEmoji, DriveFile, MeDetailed, MessagingMessage, Note, Notification, PageEvent, User, UserGroup } from './entities';
 declare type FIXME = any;
 export declare type Channels = {
     main: {
@@ -29,8 +29,6 @@ export declare type Channels = {
             readAllAntennas: () => void;
             unreadAntenna: (payload: Antenna) => void;
             readAllAnnouncements: () => void;
-            readAllChannels: () => void;
-            unreadChannel: (payload: Note['id']) => void;
             myTokenRegenerated: () => void;
             reversiNoInvites: () => void;
             reversiInvited: (payload: FIXME) => void;

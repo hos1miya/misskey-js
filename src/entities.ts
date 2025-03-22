@@ -1,4 +1,4 @@
-import { ModerationLogPayloads, notificationTypes } from './consts.js';
+import type { ModerationLogPayloads } from './consts.js';
 
 export type ID = string;
 export type DateString = string;
@@ -104,7 +104,6 @@ export type MeDetailed = UserDetailed & {
 	hasPendingReceivedFollowRequest: boolean;
 	hasUnreadAnnouncement: boolean;
 	hasUnreadAntenna: boolean;
-	hasUnreadChannel: boolean;
 	hasUnreadMentions: boolean;
 	hasUnreadMessagingMessage: boolean;
 	hasUnreadNotification: boolean;
@@ -190,8 +189,6 @@ export type Note = {
 	uri?: string;
 	url?: string;
 	isHidden?: boolean;
-	channel?: Channel | null;
-	channelId?: Channel['id'] | null;
 	via?: string | null;
 };
 
@@ -456,11 +453,6 @@ export type FollowRequest = {
 	id: ID;
 	follower: User;
 	followee: User;
-};
-
-export type Channel = {
-	id: ID;
-	// TODO
 };
 
 export type Following = {
