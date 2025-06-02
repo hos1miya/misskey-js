@@ -299,7 +299,10 @@ export declare type LiteInstanceMetadata = {
     themeColor: string | null;
     mascotImageUrl: string | null;
     bannerUrl: string | null;
-    errorImageUrl: string | null;
+    serverErrorImageUrl: string | null;
+    infoImageUrl: string | null;
+    notFoundImageUrl: string | null;
+    emojiErrorImageUrl: string | null;
     iconUrl: string | null;
     backgroundImageUrl: string | null;
     logoImageUrl: string | null;
