@@ -187,9 +187,28 @@ export declare type Endpoints = {
         req: TODO;
         res: TODO;
     };
+    'admin/emoji/add-aliases-bulk': {
+        req: {
+            ids: string[];
+            aliases: string[];
+        };
+        res: null;
+    };
     'admin/emoji/copy': {
         req: TODO;
         res: TODO;
+    };
+    'admin/emoji/delete-bulk': {
+        req: {
+            ids: string[];
+        };
+        res: null;
+    };
+    'admin/emoji/import-zip': {
+        req: {
+            fileId: string;
+        };
+        res: null;
     };
     'admin/emoji/list-remote': {
         req: TODO;
@@ -202,6 +221,27 @@ export declare type Endpoints = {
     'admin/emoji/remove': {
         req: TODO;
         res: TODO;
+    };
+    'admin/emoji/remove-aliases-bulk': {
+        req: {
+            ids: string[];
+            aliases: string[];
+        };
+        res: null;
+    };
+    'admin/emoji/set-aliases-bulk': {
+        req: {
+            ids: string[];
+            aliases: string[];
+        };
+        res: null;
+    };
+    'admin/emoji/set-category-bulk': {
+        req: {
+            ids: string[];
+            category: string;
+        };
+        res: null;
     };
     'admin/emoji/update': {
         req: TODO;
@@ -822,6 +862,10 @@ export declare type Endpoints = {
     'endpoints': {
         req: NoParams;
         res: string[];
+    };
+    'export-custom-emojis': {
+        req: null;
+        res: null;
     };
     'federation/dns': {
         req: {

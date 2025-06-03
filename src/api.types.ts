@@ -54,10 +54,16 @@ export type Endpoints = {
 	'admin/drive/files': { req: TODO; res: TODO; };
 	'admin/drive/show-file': { req: TODO; res: TODO; };
 	'admin/emoji/add': { req: TODO; res: TODO; };
+	'admin/emoji/add-aliases-bulk': { req: { ids: string[]; aliases: string[]; }; res: null; };
 	'admin/emoji/copy': { req: TODO; res: TODO; };
+	'admin/emoji/delete-bulk': { req: { ids: string[]; }; res: null; };
+	'admin/emoji/import-zip': { req: { fileId: string; }; res: null; };
 	'admin/emoji/list-remote': { req: TODO; res: TODO; };
 	'admin/emoji/list': { req: TODO; res: TODO; };
 	'admin/emoji/remove': { req: TODO; res: TODO; };
+	'admin/emoji/remove-aliases-bulk': { req: { ids: string[]; aliases: string[]; }; res: null; };
+	'admin/emoji/set-aliases-bulk': { req: { ids: string[]; aliases: string[]; }; res: null; };
+	'admin/emoji/set-category-bulk': { req: { ids: string[]; category: string; }; res: null; };
 	'admin/emoji/update': { req: TODO; res: TODO; };
 	'admin/federation/delete-all-files': { req: { host: string; }; res: null; };
 	'admin/federation/refresh-remote-instance-metadata': { req: TODO; res: TODO; };
@@ -287,6 +293,9 @@ export type Endpoints = {
 
 	// endpoints
 	'endpoints': { req: NoParams; res: string[]; };
+
+	// export custom emojis
+	'export-custom-emojis': { req: null; res: null; };
 
 	// federation
 	'federation/dns': { req: { host: string; }; res: {
