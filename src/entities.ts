@@ -169,12 +169,14 @@ export type Note = {
 	visibility: 'public' | 'home' | 'followers' | 'specified';
 	visibleUserIds?: User['id'][];
 	localOnly?: boolean;
-	myReaction?: string;
+	myReaction?: string | null;
 	reactions: Record<string, number>;
+	reactionEmojis: Record<string, string>;
 	renoteCount: number;
 	repliesCount: number;
 	poll?: {
 		expiresAt: DateString | null;
+		expiredAfter: string | null;
 		multiple: boolean;
 		choices: {
 			isVoted: boolean;
