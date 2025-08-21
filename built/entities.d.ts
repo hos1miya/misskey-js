@@ -116,6 +116,7 @@ export declare type MeDetailed = UserDetailed & {
 };
 export declare type DriveFile = {
     id: ID;
+    folderId: ID;
     createdAt: DateString;
     isSensitive: boolean;
     name: string;
@@ -182,6 +183,7 @@ export declare type Note = {
     url?: string;
     isHidden?: boolean;
     via?: string | null;
+    isDeleted: boolean;
 };
 export declare type NoteReaction = {
     id: ID;
